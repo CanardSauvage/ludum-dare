@@ -17,6 +17,7 @@ class SimpleGame {
 
   preload() {
     this.game.load.image("logo", "./assets/images/mushroom2.png");
+    this.game.time.advancedTiming = true;
   }
 
   create() {
@@ -25,6 +26,10 @@ class SimpleGame {
     this.cursors = this.game.input.keyboard.createCursorKeys();
   }
 
+   render() {
+        this.game.debug.text('' + this.game.time.fps || '--', 2, 14, "#00ff00");
+    }
+    
   update() {
     this.game.input.update();
 
